@@ -1,3 +1,4 @@
+import java.util.Scanner
 public class Pattern1
 {
     public static void main(String[] args)
@@ -12,6 +13,7 @@ public class Pattern1
 				System.out.print("*"); 
 			}
 			System.out.print("\n"); 
-		}	     
+		}
+	    sc.close()
     }
 }
