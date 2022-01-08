@@ -46,23 +46,30 @@ int main() {
     return 0;
 }
 
-// func to calculate ceiling of a number in an array
-// ceiling: find the smallest number in an array which is greater than or equal to a certain number(may be taken as input)
+// func to find the peak index in a mountain array(bitonic array)
+// mountain or bitonic array is like: [1 2 3 4 5 4 2 1], it increases at first till some index then decreases
 
 int findPeak(int arr[], int n) {
 
     int s = 0, e = n-1;
     int mid = s + (e-s)/2;
-    if(n > arr[e]) return -1;   // because n is greater than the greatest element of array then ceiling can't be calculated
     while(s<e) {
         //cout<<" s " << s <<" e " << e << endl;
         if(arr[mid] < arr[mid+1]){
-            s = mid+1; 
+            // u r in increasing part as arr[mid+1] is greater than arr[mid]
+            s = mid + 1;
         }
         else{
+            // u r in decreasing part
+            // this may be the answer but look at left
+            // so e will not be equal to mid-1
             e = mid;
         }
         mid = s + (e-s)/2;
     }
-    return s;   // when element is not found, s will be pointing to the ceiling of the number(just do dry run and observe)
+    // in the end start and end will be pointing to the max element
+    // start and end are always trying to find the max element in above two
+    // checks and hence when they are equal, then they must be pointing to the max element
+    return s;
+    
 }
