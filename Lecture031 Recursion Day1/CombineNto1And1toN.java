@@ -1,5 +1,3 @@
-package RecursionQues1;
-
 import java.util.Scanner;
 
 public class CombineNto1And1toN {
