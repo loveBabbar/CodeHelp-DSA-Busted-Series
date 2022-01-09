@@ -1,5 +1,3 @@
-package BitManipulation;
-
 import java.util.Arrays;
 
 public class FindUnique {
