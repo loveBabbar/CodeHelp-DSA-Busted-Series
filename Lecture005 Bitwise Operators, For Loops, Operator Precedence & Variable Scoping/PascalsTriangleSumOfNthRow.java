@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class PascalsTriangleSumOfNthRow {
     // Find Sum of Nth Row in Pascal's Triangle
     public static void main(String [] args){
