@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class Power {
     // calculate Power of a Number
     public static void main(String [] args){
