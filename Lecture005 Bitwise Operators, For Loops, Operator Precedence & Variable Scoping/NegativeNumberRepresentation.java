@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class NegativeNumberRepresentation {
     // Negative Number Representation in Binary
     public static void main(String [] args){
