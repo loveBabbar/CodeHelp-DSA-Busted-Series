@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class PowerOf2OrNot {
     // Find Whether a Number is Power of 2 or Not
     public static void main(String [] args){
