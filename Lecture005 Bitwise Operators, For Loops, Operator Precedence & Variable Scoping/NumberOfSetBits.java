@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class NumberOfSetBits {
     // Find Number of Set Bits in a Number
     public static void main(String [] args){
