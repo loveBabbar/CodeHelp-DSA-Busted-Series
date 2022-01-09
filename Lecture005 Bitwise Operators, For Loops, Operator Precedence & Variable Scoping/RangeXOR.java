@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class RangeXOR {
     // Range XOR
     public static void main(String [] args){
