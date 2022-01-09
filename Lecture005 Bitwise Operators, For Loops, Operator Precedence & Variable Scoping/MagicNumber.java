@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class MagicNumber {
     // Find the nth Magic Number
     public static void main(String [] args){
