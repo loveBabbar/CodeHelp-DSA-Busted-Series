@@ -1,12 +1,30 @@
-#include<iostream>
-using namespace std;
-
-
-int main() {
-
-    int arr[5] = {1,2,3,4,5};
-    int size = 5;
+class Solution {
+private:
+    void solve(vector<int> nums, vector<int> output, int index, vector<vector<int> >& ans) {
+        //base case
+        if(index >= nums.size()) {
+            ans.push_back(output);
+            return ;
+        }
+        
+        //exclude
+        solve(nums, output, index+1, ans);
+        
+        //include
+        int element = nums[index];
+        output.push_back(element);
+        solve(nums, output, index+1, ans);
+        
+    }
     
-
-    return 0;
-}
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        
+        vector<vector<int> > ans;
+        vector<int> output;
+        int index = 0;
+        solve(nums, output, index, ans);
+        return ans;
+        
+    }
+};
