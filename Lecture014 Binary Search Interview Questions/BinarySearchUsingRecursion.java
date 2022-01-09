@@ -1,5 +1,3 @@
-package com.company;
-
 public class BinarySearchUsingRecursion {
     // Binary Search Using Recursion
     public static void main(String [] args){
