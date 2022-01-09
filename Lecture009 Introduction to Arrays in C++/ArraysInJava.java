@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Scanner;
 public class ArraysInJava {
     // Arrays in Java
