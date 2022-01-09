@@ -1,5 +1,3 @@
-package BitManipulation;
-
 public class NumberOfDigitsInBaseb {
     // find Number of Digits in Base b
     public static void main(String [] args){
