@@ -1,5 +1,3 @@
-package Recursion3;
-
 public class PermutationCount {
     // Permutations Count
     public static void main(String[] args) {
