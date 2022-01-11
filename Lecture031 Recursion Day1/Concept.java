@@ -1,5 +1,3 @@
-package RecursionQues1;
-
 public class Concept {
     public static void main(String [] args){
         fun(5);
@@ -18,8 +16,6 @@ public class Concept {
                 --n VS n--
         --n --> It will Subtract 1 from n First and then Pass
         n-- --> It will Pass the n First and then Subtract 1 from n
-
          */
     }
-
 }
