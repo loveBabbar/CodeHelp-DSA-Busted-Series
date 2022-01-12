@@ -18,11 +18,7 @@ bool isPossible(vector<int> arr, int n, int m, int mid) {
         }
             pageSum = arr[i];
         }
-        if(studentCount > m) {
-            return false;
-        }
-        //cout << " for i " << i << " Student "<< studentCount << " pageSum " << pageSum << endl;
-    }
+        
     return true;
 }
 
