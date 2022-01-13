@@ -16,8 +16,8 @@ This repo is for the students for easy access to all the programs taught under C
 ***
 |Lecture|Topic|
 |-------|-----|
-|Leacture-1|[Introduction, Flow Charts, PseudoCode, Programming an](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture001%20Introduction%2C%20Flow%20Charts%2C%20PseudoCode%2C%20Programming%20and%20Why)|
-|Leacture-2|[Write First C++ Program](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture002%20Write%20First%20C%2B%2B%20Program)|
+|[Leacture-1](https://www.youtube.com/watch?v=WQoB2z67hvY&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA)|[Introduction, Flow Charts, PseudoCode, Programming an](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture001%20Introduction%2C%20Flow%20Charts%2C%20PseudoCode%2C%20Programming%20and%20Why)|
+|[Leacture-2](https://www.youtube.com/watch?v=t6zLJOCVqD0&list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&index=2)|[Write First C++ Program](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture002%20Write%20First%20C%2B%2B%20Program)|
 |Leacture-3|[If-Else, While loop & Lots of Patterns](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture003%20If-Else%2C%20While%20loop%20%26%20Lots%20of%20Patterns)|
 |Leacture-4|[Solving Pattern Questions (Part-2)](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture004%20Solving%20Pattern%20Questions%20(Part-2))|
 |Leacture-5|[Bitwise Operators, For Loops, Operator Precedence & Vari](https://github.com/loveBabbar/CodeHelp-DSA-Busted-Series/tree/main/Lecture005%20Bitwise%20Operators%2C%20For%20Loops%2C%20Operator%20Precedence%20%26%20Variable%20Scoping)|
