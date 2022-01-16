@@ -1,15 +1,3 @@
-vector<int> reverse(vector<int> v) {
-    
-    int s = 0;
-    int e = v.size()-1;
-    
-    while(s<e)
-    {
-        swap(v[s++], v[e--]);
-    }
-    return v;
-}
-
 vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
 	
     int i = n-1;
@@ -57,5 +45,6 @@ vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
     }
     
     //print(ans);
-    return reverse(ans);
+    reverse(ans.begin(),ans.end());
+    return ans;
 }
