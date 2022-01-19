@@ -1,5 +1,3 @@
-package com.company;
-
 public class InsertionSort {
     public static void main(String[] args) {
 
@@ -33,7 +31,6 @@ public class InsertionSort {
             else // Smaller element found
                 break;
         }
-
         arr[j + 1] = curr; //place curr element at correct place
 
         // one part Done recursion will do other work;
