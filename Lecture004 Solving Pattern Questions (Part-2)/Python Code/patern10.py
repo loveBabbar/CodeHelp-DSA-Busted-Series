@@ -13,10 +13,8 @@ while row <= n:
     while j <= row:
         print(j, end="")
         j = j + 1
-        
 
     #print 3rd triangle
-
     start = row - 1
     while start:
         print(start, end="")
