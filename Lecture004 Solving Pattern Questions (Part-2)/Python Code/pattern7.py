@@ -8,6 +8,6 @@ while row <= n:
         ch = (ord('A') + row + col - 2)
         print(chr(ch), end="")
         col = col + 1
-        
+
     print()
     row = row + 1
