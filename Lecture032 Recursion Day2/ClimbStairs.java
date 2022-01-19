@@ -1,5 +1,3 @@
-package com.company;
-
 public class ClimbStairs {
     public static int countDistinctWayToClimbStair(long nStairs) {
         if (nStairs == 0) // base case if we reach here we have successfully reached bottom
