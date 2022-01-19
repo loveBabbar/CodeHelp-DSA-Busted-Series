@@ -1,4 +1,3 @@
-#include<iostream>
 n = int(input())
 i = 1
 count = 1
@@ -9,5 +8,4 @@ while i<=n:
         count += 1
         j += 1
     print()
-
     i = i +1
