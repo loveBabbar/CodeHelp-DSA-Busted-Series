@@ -1,4 +1,4 @@
-class Solution {
+class SpiralPrint {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> al = new ArrayList<>();
 
