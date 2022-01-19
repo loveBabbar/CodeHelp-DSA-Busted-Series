@@ -6,7 +6,6 @@ public class Factorial {
 		if(n==0) {
 			return 1;
 		}
-		
 		return (n * factorial(n-1));
 	}
 	
@@ -16,5 +15,4 @@ public class Factorial {
 		int fact = Factorial.factorial(n);
 	    System.out.println("Factorial of "+n+" is : "+fact);
 	}
-
 }
