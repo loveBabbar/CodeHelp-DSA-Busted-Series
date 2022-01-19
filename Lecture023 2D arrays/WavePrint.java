@@ -1,4 +1,3 @@
-
 public class Solution {
     public static int[] wavePrint(int arr[][], int nRows, int mCols) {
         // Write your code here.
@@ -25,5 +24,3 @@ public class Solution {
         return ans;
     }
 }
-
-
