@@ -12,7 +12,6 @@ class Solution {
             if(val == target){
                 return true;
             }
-
             if(val < target){
                 rowIdx++;
             }
@@ -21,4 +20,4 @@ class Solution {
 
         return false;
     }
-}}
+}
