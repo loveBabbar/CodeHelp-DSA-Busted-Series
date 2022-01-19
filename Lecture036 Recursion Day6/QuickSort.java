@@ -1,5 +1,3 @@
-package com.company;
-
 public class QuickSort {
     public static void main(String[] args) {
         int[] arr = {6, 6 ,-6, -2, -4, -6, 2, -6 };
@@ -69,7 +67,6 @@ public class QuickSort {
                 eIdx--;
             }
         }
-
         return pivotIdx;
     }
 }
