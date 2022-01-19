@@ -1,5 +1,3 @@
-package com.company;
-
 public class BubbleSort {
     public static void main(String[] args) {
         //Array to be sorted
@@ -38,7 +36,6 @@ public class BubbleSort {
                 arr[i + 1] = temp;
             }
         }
-
          sortRecursive(arr , n - 1);
     }
 }
