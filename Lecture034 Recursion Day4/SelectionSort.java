@@ -1,5 +1,3 @@
-package com.company;
-
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {6, 2, 8, 4, 10};
@@ -25,12 +23,12 @@ public class SelectionSort {
                 smallestIdx = i; // update the smallestIdx val
         }
 
-            //place smallest element found at idx
+        //place smallest element found at idx
         int temp = arr[idx];
         arr[idx] = arr[smallestIdx];
         arr[smallestIdx] = temp;
 
-        //// one part Done recursion will do other work;
-         sort(arr , idx + 1 , size);
+        // one part Done recursion will do other work;
+        sort(arr , idx + 1 , size);
     }
 }
