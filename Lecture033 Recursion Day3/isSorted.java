@@ -1,12 +1,8 @@
-package com.company;
-
 public class isSorted {
     public static void main(String[] args) {
 
         int[] arr = {2 ,4 ,15 ,15 ,15};
-
         boolean  ans = checkSorted(arr , 5);
-
         if(ans)
             System.out.println("Array is Sorted");
         else
@@ -15,7 +11,6 @@ public class isSorted {
 
     public static boolean checkSorted(int[] arr , int size){
         if(size <=1) return true;
-
         return sortedHelper(arr , 1 , size);
     }
 
@@ -32,8 +27,6 @@ public class isSorted {
         //case to check previous element is greater than current element
         if(arr[idx - 1] > arr[idx])
             return false;
-
-        //
         return sortedHelper(arr , idx + 1 , size); // if reached till here we have to check for remaining element
     }
 }
