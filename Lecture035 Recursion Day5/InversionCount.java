@@ -1,5 +1,3 @@
-package com.company;
-
 class InversionCount
 {
     // arr[]: Input Array
@@ -19,11 +17,8 @@ class InversionCount
 
         //left Part inversion
         long inv = count(arr , s , mid);
-
         inv += count(arr , mid + 1 , e);
-
         inv += merge(arr , s , e);
-
         return inv;
     }
 
@@ -40,12 +35,10 @@ class InversionCount
 
         int idx = (int)s;
 
-
         //copy elements
         for(int i = 0; i < l1; i++){
             a1[i] = arr[idx++];
         }
-
 
         for(int i = 0; i < l2; i++){
             a2[i] = arr[idx++];
@@ -54,7 +47,6 @@ class InversionCount
         int idx1 = 0;
         int idx2 = 0;
         idx = (int) s;
-
         while(idx1 < l1 && idx2 < l2){
             //check for inversions
 
@@ -71,13 +63,10 @@ class InversionCount
         while(idx1 < l1){
             arr[idx++] = a1[idx1++];
         }
-
         while(idx2 < l2){
             arr[idx++] = a2[idx2++];
         }
 
         return ans;
-
     }
-
 }
