@@ -1,4 +1,4 @@
-#include<limits.h>
+#first method
 
 class Solution {
 public:
@@ -19,4 +19,18 @@ public:
         }
         return false;
     }
+};
+    
+    
+    
+#secomd method
+    
+    class Solution {
+public:
+	bool isPowerOfTwo(int n) {
+		if(n <= 0){
+			return false;
+		}
+		return log2(n) == int(log2(n));
+	}
 };
