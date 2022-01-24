@@ -1,3 +1,5 @@
+#First method
+
 class Solution {
 public:
     int bitwiseComplement(int n) {
@@ -18,4 +20,21 @@ public:
         return ans;
         
     }
+};
+
+
+
+#Second method
+
+ class Solution {
+ public:
+     int bitswiseComplement(int n) {
+         
+          int mask = 1, temp = n;
+         while(temp > 0) {
+               mask = mask << 1;
+              temp = temp >> 1;
+          }
+          return n^(mask-1);
+     }
 };
