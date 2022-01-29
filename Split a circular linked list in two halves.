@@ -1,0 +1,20 @@
+void splitList(Node *head, Node **head1, Node **head2)
+{
+    if(!head || !head->next) return;
+    Node* slow=head;
+    Node* fast=head;
+    
+        
+    while(fast->next->next!=head && fast->next!=head){
+        fast=fast->next->next;
+        slow=slow->next;
+    }
+    if(fast->next->next==head)
+        fast=fast->next;
+        
+        fast->next=slow->next;
+        slow->next=head;
+        *head1=head;
+        *head2=fast->next;
+    
+}
