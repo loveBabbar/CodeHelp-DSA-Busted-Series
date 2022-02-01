@@ -74,7 +74,22 @@ public static Node insertAtTail(Node head,int data){
     
 }
 
-public static void insertAtPosition(Node head,int pos,int value){
+public static head insertAtPosition(Node head,int pos,int value){
+    
+     if(pos==1){
+        head = insertAtHead(head,value);
+        
+        return head;
+    }
+    
+//   if pos > no. of nodes insert at last
+    if(pos>getLength(tail)){
+        
+        head = insertAtTail(head,value);
+        
+        return head;
+    }
+    
     if(head==null){
         Node newNode = new Node(value);
         head = newNode;
@@ -97,24 +112,47 @@ public static void insertAtPosition(Node head,int pos,int value){
         
         curr.next = newNode;
     }
-    
+    return head;
 }
 
+    
+public static int getLength(Node tail){
+    
+    Node head = tail.next;
+    
+    int len = 1;
+    
+    while(head!=tail){
+        head = head.next;
+        len++;
+    }
+    
+    return len;
+}
+    
 public static Node deleteNode(int pos,Node head){
+    
+    if(pos==1){
+        head.prev.next = head.next;
+        head = head.next;
+        return head;
+    }
+    
+//     if pos of node to be deleted > no. of nodes return
+    if(pos>getLength(head)) return head;
     
     int i = 1;
     
     Node curr = head;
     
-    while(curr!=null && i<pos-1){
+    while(i<pos-1){
         
         curr = curr.next;
         
         i++;
     }
     
-//   if pos > no. of nodes present
-    if(curr==null) return head;
+
     
     Node deleted = curr.next;
     
@@ -145,13 +183,13 @@ public static void main(String[] args) {
 //     head = insertAtHead(head, 103);
 //     print(head);
   
-//     insertAtPosition(head, 4, 22);
-//     insertAtPosition(head, 9, 345);
+//     head = insertAtPosition(head, 4, 22);
+//     head = insertAtPosition(head, 9, 345);
 //     print(head);    
 
-//     deleteNode(4, head);
-//     deleteNode(7, head);
-//     deleteNode(2, head);
+//     head = deleteNode(4, head);
+//     head = deleteNode(7, head);
+//     head = deleteNode(2, head);
 //     print(head);
 
 }
