@@ -6,7 +6,7 @@ using namespace std;
 bool isPrime(int n ) {
    for(int i = 2; i < n; i++){
        if(n % i == 0) {
-       //divide hogya h , not a prime no.
+       //divide hogya n , not a prime no.
           return 0;
         }
    }
