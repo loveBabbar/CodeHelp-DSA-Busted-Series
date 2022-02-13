@@ -1,0 +1,27 @@
+class Solution {
+public:
+    
+    void solve(vector<int> nums, vector<vector<int>>& ans, int start){
+        //base case
+        if(start >= nums.size()){
+            ans.push_back(nums);
+            return;
+        }
+        for(int i=start;i<nums.size();i++){
+            swap(nums[start], nums[i]);
+            //recursive call
+            solve(nums, ans, start+1);
+            //backtrack
+            swap(nums[start], nums[i]);
+        }
+        
+    }
+    
+    
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        int start=0;
+        solve(nums, ans, start);
+        return ans;
+    }
+};
