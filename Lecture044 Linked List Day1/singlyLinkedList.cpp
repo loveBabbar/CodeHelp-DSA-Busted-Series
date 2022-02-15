@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 
 class Node {
@@ -42,6 +43,11 @@ void insertAtTail(Node* &tail, int d) {
 }
 
 void print(Node* &head) {
+
+    if(head == NULL) {
+        cout << "List is empty "<< endl;
+        return ;
+    }
     Node* temp = head;
 
     while(temp != NULL ) {
@@ -112,6 +118,111 @@ void deleteNode(int position, Node* & head) {
     }
 }
 
+bool isCircularList(Node* head) {
+    //empty list
+    if(head == NULL) {
+        return true;
+    }
+
+    Node* temp = head -> next;
+    while(temp != NULL && temp != head ) {
+        temp = temp -> next;
+    }
+
+    if(temp == head ) {
+        return true;
+    }
+
+    return false;
+}
+
+
+bool detectLoop(Node* head) {
+
+    if(head == NULL)
+        return false;
+
+    map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while(temp !=NULL) {
+
+        //cycle is present
+        if(visited[temp] == true) {
+            cout << "Present on element " << temp->data << endl;
+            return true;
+        }
+
+        visited[temp] = true;
+        temp = temp -> next;
+
+    }
+    return false;
+
+}
+
+Node* floydDetectLoop(Node* head) {
+
+    if(head == NULL)
+        return NULL;
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow != NULL && fast !=NULL) {
+        
+        fast = fast -> next;
+        if(fast != NULL) {
+            fast = fast -> next;
+        }
+
+        slow = slow -> next;
+
+        if(slow == fast) {
+            cout << "present at " << slow -> data << endl;
+            return slow;
+        }
+    }
+
+    return NULL;
+
+}
+
+Node* getStartingNode(Node* head) {
+
+    if(head == NULL) 
+        return NULL;
+
+    Node* intersection = floydDetectLoop(head);
+    Node* slow = head;
+
+    while(slow != intersection) {
+        slow = slow -> next;
+        intersection = intersection -> next;
+    }  
+
+    return slow;
+
+}
+
+void removeLoop(Node* head) {
+
+    if( head == NULL)
+        return;
+
+    Node* startOfLoop = getStartingNode(head);
+    Node* temp = startOfLoop;
+
+    while(temp -> next != startOfLoop) {
+        temp = temp -> next;
+    } 
+
+    temp -> next = NULL;
+
+}
+
+
 int main() {
     
     //created a new node
@@ -122,26 +233,55 @@ int main() {
     //head pointed to node1
     Node* head = node1; 
     Node* tail = node1;
-    print(head);
+    //print(head);
 
     insertAtTail(tail, 12);
 
-    print(head);
+    //print(head);
     
     insertAtTail(tail, 15);
-    print(head);
+    //print(head);
 
     insertAtPosition(tail,head, 4, 22);
-    print(head);    
+    //print(head);    
+
+    //cout << "head " << head -> data << endl;
+    //cout << "tail " << tail -> data << endl;
+
+    //deleteNode(4, head);
+    
+
+    tail -> next = head ->next;
 
     cout << "head " << head -> data << endl;
     cout << "tail " << tail -> data << endl;
+    //print(head);
 
-    deleteNode(4, head);
+    if(floydDetectLoop(head) != NULL) {
+        cout << "Cycle is present " << endl;
+    }
+    else
+    {
+        cout << "no cycle" << endl;
+    }
+
+    Node* loop = getStartingNode(head);
+
+    cout << "loop starts at " << loop -> data  << endl;
+
+    removeLoop(head);
     print(head);
 
-    cout << "head " << head -> data << endl;
-    cout << "tail " << tail -> data << endl;
+    /*
+    print(head);
+
+    if(isCircularList(head)) {
+        cout << " Linked List is Circular in nature" << endl;
+    }
+    else{
+        cout << "Linked List is not Circular " << endl;
+    }
+    */
 
 
     return 0;
