@@ -104,7 +104,7 @@
 
 
 
-    void update(int *p){
+    void square(int *p){
         int a = 70;
         p = &a;
         *p = (*p) * (*p);
