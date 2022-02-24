@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+// function to print an Ap
+int ans(int n)
+{
+    while(n>=0){
+      int ans1 = 3*n+7;
+       return ans1;
+
+    }
+    }
+int main()
+{
+    int n;
+    cin >> n;
+    cout << ans(n);
+}
