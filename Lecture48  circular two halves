@@ -1,0 +1,113 @@
+#include<iostream>
+using namespace std;
+
+class Node{
+
+    public:
+    int data;
+    Node* next;
+
+    //constructor
+    Node(int d){
+        this->data = d;
+        this->next = NULL;
+    }
+};
+void insertNode(Node* &tail,int element,int d){
+
+    if(tail == NULL){
+        Node* newNode = new Node(d);
+        tail = newNode;
+        newNode->next = newNode;
+    }
+    else{
+
+       Node* curr = tail;
+       while (curr->data != element)
+       {
+           curr = curr->next;
+       }
+       //element found
+       Node* newNode = new Node(d);
+       newNode->next = curr -> next;
+       curr -> next = newNode;
+    }
+}
+void print(Node* &tail){
+    
+    if(tail == NULL){
+        cout << "Linked List is empty "<< endl;
+        return;
+    }
+    Node* temp = tail;
+    do
+    {
+        cout << temp->data << " ";
+        temp = temp -> next;
+    } while (tail != temp);
+    cout << endl;
+}
+//gives length of linked list
+int getLength(Node* tail){
+
+   if(tail == NULL){
+       cout << "List is empty "<< endl;
+       return 0;
+   }
+    int len = 1;
+    Node* temp = tail;
+    temp = temp->next;
+    while (temp != tail)
+    {
+        len++;
+        temp = temp -> next;
+    } 
+    return len;
+}
+Node* ListHalf(Node* tail){
+  
+    int count = getLength(tail);
+    int half = count/2;
+    int i = 1;
+    Node* curr = tail; //tail is my first head of circular linked list
+    Node* second_head = NULL;
+    while (i < half)
+    {  
+           curr = curr->next;
+           i++;
+            if(i==half){
+                second_head = curr->next;  //second_head is my second head of circular loop
+                curr->next = tail;
+            }
+            if(second_head != NULL){
+                Node* temp = second_head;
+                while (temp->next != tail)
+                {
+                    temp = temp->next;
+                }
+                temp->next = second_head;
+            }
+    }
+    return tail;
+ //or
+   //return second_head;
+}
+int main(){
+
+    Node* tail = NULL;
+    Node* head = NULL;
+
+    insertNode(tail,0,1);
+    insertNode(tail,1,2);
+    insertNode(tail,2,3);
+    insertNode(tail,3,4);
+    insertNode(tail,4,5);
+    insertNode(tail,5,6);
+    insertNode(tail,6,7);
+    
+    print(tail);
+     Node* h = ListHalf(tail);
+     print(h);
+    return 0;
+
+}
