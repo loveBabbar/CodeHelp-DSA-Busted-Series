@@ -6,6 +6,6 @@ public class FindithBitOfNumber {
         int a = 1100101;
         // Find 2nd Bit of the Number
         int n = 2;
-        System.out.println(n + " Bit of " + a + " is: " + Integer.toBinaryString(n & (1 << n -1)));
+        System.out.println(n + " Bit of " + a + " is: " + Integer.toBinaryString(a & (1 << n -1)));
     }
 }
