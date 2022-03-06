@@ -1,0 +1,1 @@
+print("Namste Dunia")
