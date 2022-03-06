@@ -14,7 +14,7 @@ public class EvenOrOdd {
              10 -->  1010                 9 --> 1001
                    & 0001                     & 0001
                    --------                   --------
-                     0000 -> So EVEN            0001 -> So EVEN
+                     0000 -> So EVEN            0001 -> So ODD
          */
         if((n & 1) == 1)
             System.out.println(n + " is ODD ");
