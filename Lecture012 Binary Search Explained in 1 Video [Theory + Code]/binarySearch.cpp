@@ -14,11 +14,12 @@ int binarySearch(int arr[], int size, int key) {
             return mid;
         }
 
-        //go to right wala part
-        if(key > arr[mid]) {
+        //go to right wala part(considering monotonically increasing elements of array)
+        else if(key > arr[mid]) {
             start = mid + 1;
         }
-        else{ //key < arr[mid]
+        //key < arr[mid] , go to left wala part (considering monotonically increasing elements of array)
+        else{ 
             end = mid - 1;
         }
 
