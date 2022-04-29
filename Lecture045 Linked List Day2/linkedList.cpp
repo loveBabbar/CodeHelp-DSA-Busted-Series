@@ -113,10 +113,31 @@ void deleteNode(int position, Node* & head) {
 }
 
 int main() {
-    
-    
    
+      Node* head = new Node(10);
+    Node* second = new Node(12);
+    Node* third = new Node(14);
+    Node* tail = new Node(16);
+    
+    head->next = second;
+    second->next = third;
+    third->next = tail;
+    
+    //insering at head
+    insertAtHead(head,8);
+    print(head);
+    
+    //inserting at tail
+    insertAtTail(tail,18);
+    print(head);
+    
+    //inserting at given position
+    insertAtPosition(tail,head,2,11);
+     print(head);
 
-
+    //deleting node
+    deleteNode(3,head);
+     print(head);
+    
     return 0;
 }
