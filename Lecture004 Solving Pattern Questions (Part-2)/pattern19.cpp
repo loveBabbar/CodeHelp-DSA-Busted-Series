@@ -2,10 +2,13 @@
 Question : Triangle pattern 
 given n= 4
 Expected output 
-A A A A
-B B B B 
-C C C C 
-D D D D
+
+
+****
+***
+**
+*
+
 */
 
 #include <iostream>
@@ -19,13 +22,18 @@ int main(){
 
     int i = 1;
     while(i <= n){
+        int star = n - i + 1;
         int j = 1;
-        while(j <= n){
-            char ch = 'A' + i - 1;
-            cout << ch << " ";
+        while(j <= star && j <= n){
+            cout << "* " ;
             j += 1;
+        }
+        int k = 1;
+        while(k <= i){
+            cout << "  " ;
+            k += 1;
         }
         cout << endl;
         i += 1;
-    }        
+    }         
 }

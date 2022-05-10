@@ -2,10 +2,10 @@
 Question : Triangle pattern 
 given n= 4
 Expected output 
-A A A A
-B B B B 
-C C C C 
-D D D D
+A 
+B C
+C D E   
+D E F G 
 */
 
 #include <iostream>
@@ -20,12 +20,12 @@ int main(){
     int i = 1;
     while(i <= n){
         int j = 1;
-        while(j <= n){
-            char ch = 'A' + i - 1;
+        while(j <= i){
+            char ch = 'A' + i + j - 2;
             cout << ch << " ";
             j += 1;
         }
         cout << endl;
         i += 1;
-    }        
+    }         
 }
