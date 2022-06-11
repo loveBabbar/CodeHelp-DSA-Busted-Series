@@ -18,7 +18,7 @@ int main() {
     //variable size array
     int* arr = new int[n];
 
-    //takign inputn in aray
+    //taking input in array
     for(int i=0; i<n; i++) {
         cin >> arr[i];
     }
@@ -36,9 +36,6 @@ int main() {
     while(true) {
         int* ptr = new int;
     }
-
-
-
 
     return 0;
 }
