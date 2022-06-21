@@ -125,18 +125,17 @@ void deleteNode(int position, Node* & head) {
     {
         //deleting any middle node or last node
         Node* curr = head;
-        Node* prev = NULL;
 
         int cnt = 1;
         while(cnt < position) {
-            prev = curr;
             curr = curr -> next;
             cnt++;
         }
-
-        curr -> prev = NULL;
-        prev -> next = curr -> next;
-        curr -> next = NULL;
+        
+        curr->prev->next = curr->next;
+        curr->next->prev = curr->prev;
+        curr->next = NULL;
+        curr->prev = NULL;
 
         delete curr;
 
