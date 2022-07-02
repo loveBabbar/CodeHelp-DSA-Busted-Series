@@ -29,7 +29,7 @@ TC -> O(n^2) where n is the number of nodes in the worst case
 SC -> O(1)
 
    
-Using hashmap
+Using map stl functions storing val,bool
 TC -> O(n)
 SC -> O(n)
     
@@ -43,11 +43,9 @@ Node *removeDuplicates(Node *head)
     while( curr != nullptr){
 
         if( visited[curr->data] == true ){
-            Node* nextNode = curr ->next;
-            prev->next = nextNode;
-
+            prev -> next  = prev -> next -> next;
             delete(curr);
-            curr = nextNode;
+            curr = prev -> next;
             
         }
         else{
