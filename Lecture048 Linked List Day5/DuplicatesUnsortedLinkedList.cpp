@@ -27,3 +27,35 @@ Node *removeDuplicates(Node *head)
 
 TC -> O(n^2) where n is the number of nodes in the worst case
 SC -> O(1)
+
+   
+Using hashmap
+TC -> O(n)
+SC -> O(n)
+    
+Node *removeDuplicates(Node *head)
+{
+    // Write your code here
+    if( head == nullptr || head->next == nullptr) return head;
+    map <int , bool> visited;
+    Node* curr = head;
+    Node* prev = NULL;
+    while( curr != nullptr){
+
+        if( visited[curr->data] == true ){
+            Node* nextNode = curr ->next;
+            prev->next = nextNode;
+
+            delete(curr);
+            curr = nextNode;
+            
+        }
+        else{
+            visited[curr->data] = true;
+            prev = curr;
+            curr = curr -> next; 
+        }
+    }
+    return head;
+    
+}    
