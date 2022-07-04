@@ -31,7 +31,6 @@ vector<long long> printFirstNegativeInteger(long long int A[],
                                              long long int N, long long int K) {
          deque<long long int> dq;
          vector<long long> ans;
-         int negative = -1;
          
          //process first window
          for(int i=0; i<K; i++) {
