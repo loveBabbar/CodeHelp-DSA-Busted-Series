@@ -28,3 +28,48 @@ public:
         
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Faster approach
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        int n = nums.size();
+        vector<vector<int>> v;
+        int i, j, k;
+        for(i=0; i<(1<<n); i++){
+            vector<int> temp;
+            for(j=0; j<n; j++){
+                if(i&(1<<j)){
+                    temp.push_back(nums[j]);
+                }
+            }
+            v.push_back(temp);
+        }
+        return v;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
