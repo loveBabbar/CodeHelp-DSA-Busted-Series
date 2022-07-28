@@ -41,3 +41,25 @@ Node * uniqueSortedList(Node * head) {
     
     return head; 
 }
+/*
+Approach 2:
+
+Node* RemoveDuplicateUnsorted(Node* head){
+    if(head==NULL){
+        return NULL;
+    }
+    map<Node*, bool> visited;
+    Node* temp=head;
+    while(temp!=NULL){
+        if(visited[temp]==true){
+            Node* next_next=temp->next->next;
+            Node* nodeToDelete=temp->next;
+            delete(nodeToDelete);
+            temp->next=next_next;
+        }
+        visited[temp]=true;
+        temp=temp->next;
+    }
+    return head;
+}
+*/
