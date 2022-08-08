@@ -43,3 +43,29 @@ int findMinimumCost(string str) {
     
     
 }
+
+
+// approch 2 without using stack
+// Time complexity: O(n), Space Complexity: O(1);
+int findMinimumCost(string str) {
+    if(str.size()%2 != 0){
+        return -1;
+    }
+      int ob = 0;
+       int cb = 0;
+        for (int i = 0; i < str.size(); ++i) {            
+            char ch = str[i];
+            if(ch =='{'){
+                ob++;
+            }
+            else{
+                if(ob>0){
+                    ob--;
+                }
+                else{
+                    cb++;
+                }
+            }
+        }
+    return (ob+1)/2 +(cb+1)/2;
+}
