@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.html": "html",
-        "span": "cpp",
-        "type_traits": "cpp"
-    }
-}
