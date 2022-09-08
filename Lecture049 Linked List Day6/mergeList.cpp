@@ -27,7 +27,7 @@ Node<int>* solve(Node<int>* first, Node<int>* second){
     
     if(first->next == NULL){
         first->next = second;
-        return first;
+        return first; 
     }
     
     Node<int>* curr1 = first;
