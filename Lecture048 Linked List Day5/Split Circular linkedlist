@@ -1,0 +1,101 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+    ~Node(){
+        int value=this->data;
+        cout<<"Deleting node with value "<<value<<endl;
+        if(this->next!=NULL){
+            delete next;
+            this->next=NULL;
+        }
+    }
+    
+};
+
+void insertNode(Node* &head,int element,int d){
+    //empty list
+    if(head==NULL){
+        Node *n=new Node(d);
+        head=n;
+        n->next=n;
+        return;
+    }
+    else{
+        Node* curr=head;
+        while(curr->data!=element){
+            curr=curr->next;
+        }
+        Node* n=new Node(d);
+        n->next=curr->next;
+        curr->next=n;
+
+    }
+}
+void print(Node* head){
+    Node* curr=head;
+    while(curr->next!=head){
+        cout<<curr->data<<" ";
+        curr=curr->next;
+    }
+    cout<<curr->data<<endl;
+}
+
+bool detectLoop(Node* head){
+    if(head==NULL) return false;
+    map<Node*,bool> visited;
+    Node* curr=head;
+    while(curr!=NULL){
+        if(visited[curr]==true){
+            return true;
+        }
+        visited[curr]=true;
+        curr=curr->next;
+    }
+    return false;
+}
+Node *split(Node *head){
+    Node *slow=head;
+    Node *fast=head;
+    while(fast->next!=head && fast->next->next!=head){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    if(fast->next->next==head){
+        fast=fast->next;
+    }
+    Node *head1=head;
+    Node *head2=slow->next;
+    fast->next=slow->next;
+    slow->next=head;
+    return head2;
+}
+
+
+int main(){
+    Node *head=NULL;
+    insertNode(head,0,1);
+    insertNode(head,1,2);
+    insertNode(head,2,3);
+    insertNode(head,3,4);
+    insertNode(head,4,5);
+    insertNode(head,5,6);
+   
+    print(head);
+    cout<<detectLoop(head)<<endl;
+    Node *head2=split(head);
+    print(head);
+    cout<<detectLoop(head)<<endl;
+    print(head2);
+    cout<<detectLoop(head)<<endl;
+    
+
+
+}
