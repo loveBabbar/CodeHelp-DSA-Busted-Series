@@ -42,12 +42,20 @@ void solve(Node<int>* first, Node<int>* second) {
             curr2 = next2;
         }
         else {
-            
+            curr1=next1;
+            next1=next1->next;
+            if(next1==NULL)
+            {
+                curr1->next=curr2;
+                return first;
+            }
+          
         }
         
         
     }
     
+    return first;
     
 }
 
@@ -60,12 +68,14 @@ Node<int>* sortTwoLists(Node<int>* first, Node<int>* second)
         return first;
     
     if(first -> data <= second -> data ){
-        solve(first, second);
+        head1=solve(first, second);
     }
     else
     {
-        solve(second, first);
+        head1=solve(second, first);
     }
+    
+    return head;
     
     
 }
