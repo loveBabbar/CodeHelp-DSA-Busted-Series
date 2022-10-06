@@ -36,6 +36,10 @@ int allocateBooks(vector<int> arr, int n, int m) {
     int e = sum;
     int ans = -1;
     int mid = s + (e-s)/2;
+    // condition missing if student count is greater than size of array 
+    if(m>n){
+        return -1;
+    }
     
     while(s<=e)
     {
