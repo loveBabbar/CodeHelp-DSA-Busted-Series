@@ -22,7 +22,7 @@
 
 ************************************************************/
 
-void solve(Node<int>* first, Node<int>* second) {
+Node<int>* solve(Node<int>* first, Node<int>* second) {
     
     
     Node* curr1 = first;
@@ -42,11 +42,20 @@ void solve(Node<int>* first, Node<int>* second) {
             curr2 = next2;
         }
         else {
+            curr1=next1;
+            next1=next1->next;
+            if(next1==NULL)
+            {
+                curr1->next = curr2;
+                return first;
+            }
             
         }
         
         
     }
+    
+    return first;
     
     
 }
