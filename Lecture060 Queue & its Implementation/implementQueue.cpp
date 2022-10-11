@@ -16,7 +16,7 @@ public:
     /*----------------- Public Functions of Queue -----------------*/
 
     bool isEmpty() {
-        if(qfront == rear) {
+        if(qfront == 0 & rear == 0) { // in case of qfront == rear, there can still be one element to whom both are pointing
             return true;
         }
         else
