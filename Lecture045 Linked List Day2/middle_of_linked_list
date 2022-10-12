@@ -1,0 +1,38 @@
+Node* getMid(Node*head){
+    if(head==NULL || head->next==NULL){
+        return head;
+    }
+    //It is home work to find it's really need of below case or not. 
+    if(head->next->next=NULL){
+        return head->next;
+    }
+    Node*fast=head->next;
+    Node*slow=head;
+    while(fast!=NULL){
+        fast=fast->next;
+        if(fast!=NULL){
+            fast=fast->next;
+        }
+        slow=slow->next;
+    }
+    return slow;
+}
+int length(Node*head){
+    int count=0;
+    while(head!=NULL){
+        head=head->next;
+        count++;
+    }
+    return count;
+}
+Node *findMiddle(Node *head) {
+    /* int mid=length(head)/2;
+    int cnt=0;
+    Node* temp=head;
+    while(cnt<mid){
+        temp=temp->next;
+        cnt++;
+    }
+    return temp; */
+    return getMid(head);
+}
