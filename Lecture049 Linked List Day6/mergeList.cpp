@@ -22,7 +22,7 @@
 
 ************************************************************/
 
-void solve(Node<int>* first, Node<int>* second) {
+void solve(Node* first, Node* second) {
     
     
     Node* curr1 = first;
