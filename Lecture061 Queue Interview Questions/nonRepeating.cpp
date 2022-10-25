@@ -22,7 +22,7 @@ class Solution {
 		            }
 		            else
 		            {
-		                ans.push_back(q.front());
+		                ans.push_back(q.back());
 		                break;
 		            }
 		        }
