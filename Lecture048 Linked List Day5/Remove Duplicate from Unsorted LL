@@ -1,0 +1,39 @@
+#include <bits/stdc++.h> 
+/****************************************************************
+    Following is the class structure of the Node class:
+    class Node
+    {
+    public:
+        int data;
+        Node *next;
+        Node(int data)
+        {
+            this->data = data;
+            this->next = NULL;
+        }
+    };
+*****************************************************************/
+
+Node *removeDuplicates(Node *head)
+{
+    // Write your code here
+   if(head == NULL){
+        return NULL;
+    }
+
+    map<int,bool>visited;
+    Node* curr = head;
+    while(curr->next != NULL){
+       visited[curr->data] = true;
+       if(visited[curr->next->data] == true){
+         Node* del = curr->next;
+         curr->next = del->next;
+         del->next = NULL;
+         delete del;
+       }
+       else{
+        curr = curr->next;
+       }
+    }
+  return head;
+}
