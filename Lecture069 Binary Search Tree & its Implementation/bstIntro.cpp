@@ -43,3 +43,39 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
 
 //Practice Link
 //https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
+
+
+
+//Deletion
+
+Node* deleteFromBST(Node* root,int val){
+    if(root==NULL){
+        return root;
+    }
+    if(root->data == val){
+        if(root->left == NULL && root->right == NULL){
+            delete root;
+            return NULL;
+        }
+
+        if(root->left !=NULL && root->right == NULL)[
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        ]
+        if(root->left != NULL && root->right != NULL){
+            int mini = minVal(root->right) -> data;
+            root->data = mini;
+            root->right = deleteFromBST(root->right,mini);
+            return root;
+        }
+    }
+    else if(root->data > val){
+        root->left = deleteFromBST(root->left,val);
+        return root;
+    }
+    else{
+        root->right = deleteFromBST(root->right,val);
+        return root;
+    }
+}
