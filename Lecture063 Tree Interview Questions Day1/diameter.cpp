@@ -119,7 +119,7 @@ class Solution {
         
         int op1 = left.first;
         int op2 = right.first;
-        int op3 = left.second + right.second + 1;
+        int op3 = left.second + right.second ;
         
         pair<int,int> ans;
         ans.first = max(op1, max(op2, op3));;
