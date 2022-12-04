@@ -111,36 +111,49 @@ void insertAtPosition(Node* & tail, Node* &head, int position, int d) {
     nodeToInsert -> prev = temp;
 }
 
-void deleteNode(int position, Node* & head) { 
-
-    //deleting first or start node
-    if(position == 1) {
-        Node* temp = head;
-        temp -> next -> prev = NULL;
-        head = temp ->next;
-        temp -> next = NULL;
-        delete temp;
-    }
-    else
+void DeleteAtPosition(Node* &head,Node* &tail,int position)
+{   //checking for head deletion
+    if(position==1)
     {
-        //deleting any middle node or last node
-        Node* curr = head;
+        Node* temp=head;
+        temp->next->prev=NULL;
+        head=temp->next;
+        temp->next=NULL;
+        delete temp;    
+    }
+    else    // tail and middle case
+    {
+        Node* curr=head;
         Node* prev = NULL;
 
-        int cnt = 1;
-        while(cnt < position) {
-            prev = curr;
-            curr = curr -> next;
+        int cnt=1;
+
+        while(cnt<position)
+        {
+            prev=curr;
+            curr=curr->next;
             cnt++;
         }
-
-        curr -> prev = NULL;
-        prev -> next = curr -> next;
-        curr -> next = NULL;
+        //for tail deletion (to adjust the tail)
+        if(curr->next==NULL)
+        {
+            tail=prev;
+            prev->next=curr->next;  // null
+            curr->prev=NULL;
+            delete curr;
+            return ;
+        }
+        // below case only execute when positoin is not head or tail
+        // here only 1 step is neglected in the tail block
+        curr->next->prev=curr->prev;
+        prev->next=curr->next;
+        curr->next=NULL;
+        curr->prev=NULL;
 
         delete curr;
-
     }
+
+}
 }
 
 
