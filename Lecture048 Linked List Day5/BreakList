@@ -1,0 +1,74 @@
+#include<iostream>
+using namespace std;
+
+class Node{
+	public:
+		int data;
+		Node* next;
+		
+	public:
+		Node(int data){
+			this->data=data;
+			this->next=NULL;
+		}	
+};
+Node* insert(Node* &head,int data){
+		Node* curr=new Node(data);
+		Node* temp=head;
+		while(temp->next!=NULL){
+			temp=temp->next;
+		}
+		
+		temp->next=curr;
+		
+//		curr->next=NULL;
+		return head;
+	}
+void print(Node* head){
+		Node* temp=head;
+		while(temp!=NULL){
+			cout<<temp->data<<" ";
+			temp=temp->next;
+		}
+	}
+Node* breakList(Node* &head){
+		Node* slow=head;
+		Node* fast=head;
+		Node* prev=NULL;
+		Node* head2=NULL;
+		while(slow!=NULL && fast!=NULL){
+			fast=fast->next;
+			if(fast!=NULL){
+				fast=fast->next;
+			}
+			prev=slow;
+			slow=slow->next;
+			
+		}
+		prev->next=NULL;
+		head2=slow;
+		print(head);
+		cout<<endl;
+		print(head2);
+	return head;
+		
+	}
+
+int main(){
+	//this is for non circular as we can remove the circular by pointing last node pointing
+	//to head ->> to NULL
+	Node* node1=new Node(10);
+	Node* head=node1;
+	insert(head,15);
+	insert(head,1);
+	insert(head,3);
+	insert(head,5);
+//	insert(head,12);
+	print(head);
+	cout<<"/n the divided lists are"<<endl;
+	breakList(head);
+
+	
+	return 0;
+	
+}
