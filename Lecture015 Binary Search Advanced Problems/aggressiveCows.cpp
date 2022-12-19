@@ -1,4 +1,4 @@
-bool isPossible(vector<int> &stalls, int k, int mid, int n) {
+bool isPossible(vector<int> &stalls, int k, int mid,int n) {
     
     int cowCount = 1;
     int lastPos = stalls[0];
