@@ -44,6 +44,7 @@ class DLL():
                 curr = curr.next
 
 
+    #deleting nodes
     def delelte(self,data):
         curr = self.head
 
