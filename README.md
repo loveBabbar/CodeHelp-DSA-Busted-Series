@@ -10,7 +10,7 @@ This repo is for the students for easy access to all the programs taught under C
 Youtube Channel: CodeHelp - by Babbar
 
 
-Your Instructor: Love Babbar
+Your Instructor: Love Babbar (Code Help)
 
 
 
