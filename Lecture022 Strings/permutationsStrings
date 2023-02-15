@@ -2,7 +2,7 @@
 #include<iostream>
 using namespace std;
 private:
-bool checkEqual(int a[26], int b[26]{
+bool checkEqual(int a[26], int b[26]){
 for(int i=0; i<26; i++){
 if(a[i] != b[i])
 return 0;
@@ -27,6 +27,7 @@ int count2[26] = {0};
 while(i <windowSize && i <s2.length()){
 int index = s2[i] - 'a';
 count2[index]++;
+i++;
 }
 if (checkEqual(count1, count2) )
 return 1;
@@ -46,6 +47,7 @@ i++;
 if (checkEqual(count1, count2))
 return 1;
 }
-}
     return 0;
 }
+
+};
