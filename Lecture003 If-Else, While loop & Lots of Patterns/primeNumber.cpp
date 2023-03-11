@@ -1,22 +1,23 @@
-#include<iostream>
+// Check if a number is Prime or not
+
+# include <iostream>
 using namespace std;
 
 int main() {
 
-    int n;
-    cin >> n;
+  int n, i=2;
+  cout <<"Enter to check if a number is Prime = ";
+  cin >>n;
 
-    int i = 2;
-
-    while(i<n) {
-        //divide hogya, not prime
-        if(n%i==0) {
-            cout<< " Not prime for "<< i << endl;
-        }
-        else{
-            cout<<" Prime for "<< i <<endl;
-        }
-        i = i + 1;
+  while (i<n) {
+    if (n%i==0) {
+      cout <<"Number is not Prime" <<endl;
+      return 0;
     }
+    else {
+      i = i+1;
+    }
+  }
 
+  cout <<"Number is Prime" <<endl;
 }
