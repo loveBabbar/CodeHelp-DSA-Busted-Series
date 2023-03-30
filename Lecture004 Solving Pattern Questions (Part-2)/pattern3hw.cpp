@@ -1,5 +1,5 @@
-// Home work (PDF-Questions)
-// Q-3 
+// Try part (PDF-Questions)
+// Q-2
 
 #include <iostream>
 using namespace std;
