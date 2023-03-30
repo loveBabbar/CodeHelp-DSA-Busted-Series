@@ -10,11 +10,11 @@ int main()
 {
     int n;
     cin >> n;
-    int i = 1;
+    int i = 1;                           // i = row
     int p = n * n;
     while (i <= n)
     {
-        int j = 1;
+        int j = 1;                      // j = coloumn
         while (j <= n)
         {
             cout << p << " ";
