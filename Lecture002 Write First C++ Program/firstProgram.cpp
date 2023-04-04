@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     
-  cout << " Namaste Dunia " << endl;
+  cout << " Namaste Dunia " << "Hello";
   
   return 0; 
 }
