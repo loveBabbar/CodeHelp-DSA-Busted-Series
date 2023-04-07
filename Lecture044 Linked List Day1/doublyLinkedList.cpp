@@ -16,7 +16,8 @@ class Node {
 
     ~Node() {
         int val = this -> data;
-        if(next != NULL) {
+       if(next != NULL) {                  // using these if statement in line 18 you are deleting the node pointed by the next pointer of the node we want to delete.
+                                           // This doesn't make sense. the code works fine. But logically it is incorrect.You can equate current pointer to NULL directly.
             delete next;
             next = NULL;
         }
