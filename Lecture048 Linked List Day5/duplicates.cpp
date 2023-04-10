@@ -41,3 +41,28 @@ Node * uniqueSortedList(Node * head) {
     
     return head; 
 }
+
+// removing duplicates from unsortedList
+
+Node *removeDuplicates(Node *head)
+{
+    // Write your code here
+    if( head == NULL){
+        return NULL;
+
+    }
+    unordered_map< int, bool> visited;
+
+    Node *curr = head;
+    while( curr -> next != NULL){
+        visited[curr -> data ] = true;
+
+        if( visited[curr -> next -> data] == true){
+            curr -> next = curr -> next -> next;
+        }
+        else{
+            curr = curr -> next;
+        }
+    }
+    return head;
+}
