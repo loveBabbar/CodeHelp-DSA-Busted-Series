@@ -10,7 +10,12 @@ void merge(int arr1[], int n, int arr2[], int m, int arr3[]) {
         if(arr1[i] < arr2[j]){
             arr3[k++] = arr1[i++];
         }
+        else if (arr2[j] < arr1[i]){
+            arr3[k++] = arr2[j++];
+        }
         else{
+            // element at index i and j are equal
+            arr3[k++] = arr1[i++];
             arr3[k++] = arr2[j++];
         }
     }
@@ -22,7 +27,7 @@ void merge(int arr1[], int n, int arr2[], int m, int arr3[]) {
 
     //copy kardo second array k remaining element ko
     while(j<m) {
-        arr2[k++] = arr2[j++];
+        arr3[k++] = arr2[j++];
     }
 }
 
