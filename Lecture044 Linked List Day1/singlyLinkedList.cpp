@@ -24,7 +24,6 @@ class Node {
         }
         cout << " memory is free for node with data " << value << endl;
     }
-
 };
 
 void insertAtHead(Node* &head, int d) {
