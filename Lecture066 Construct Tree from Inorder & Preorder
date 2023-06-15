@@ -1,0 +1,34 @@
+class Solution{
+    public:
+    int find(int in[],int ele,int s,int e)
+    {
+        for(int i=s;i<=e;i++)
+        {
+            if(in[i]==ele)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    Node* solve(int in[],int pre[],int &index,int s,int e,int n)
+    {
+        if(index>=n || s>e)
+        {
+            return NULL;
+        }
+        int element=pre[index++];
+        Node* root=new Node(element);
+        int position=find(in,element,s,e);
+      root->left=  solve(in,pre,index,s,position-1,n);
+      root->right=solve(in,pre,index,position+1,e,n);
+      return root;
+    }
+    Node* buildTree(int in[],int pre[], int n)
+    {
+        // Code here
+        int index=0;
+       Node* ans= solve(in,pre,index,0,n-1,n);
+       return ans;
+    }
+};
