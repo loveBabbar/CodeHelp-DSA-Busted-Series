@@ -1,0 +1,31 @@
+int find(int in[],int ele,int s,int e)
+    {
+        for(int i=s;i<=e;i++)
+        {
+            if(in[i]==ele)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    Node* solve(int in[],int post[],int &index,int s,int e,int n)
+    {
+        if(index<0 || s>e)
+        {
+            return NULL;
+        }
+        int element=post[index--];
+        Node* root=new Node(element);
+        int position=find(in,element,s,e);
+      
+      root->right=solve(in,post,index,position+1,e,n);
+      root->left=  solve(in,post,index,s,position-1,n);
+      return root;
+    }
+Node *buildTree(int in[], int post[], int n) {
+    // Your code here
+     int index=n-1;
+       Node* ans= solve(in,post,index,0,n-1,n);
+       return ans;
+}
