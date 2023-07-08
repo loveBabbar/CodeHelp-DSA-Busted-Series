@@ -6,7 +6,11 @@ class Solution {
 public:
     string removeOccurrences(string s, string part) {
         
-        while(s.length()!=0 && s.find(part) < s.length()) {
+        // s.find(part) function does not find the substring part within the string s, it returns a special value called string::npos
+        // s.find(part) returns a value greater than the s.length() , when part is not found 
+        // s.length()!=0 &&  --> so we can ignore this condition in the while loop
+       
+        while( s.find(part) < s.length()) {   
             s.erase(s.find(part), part.length());
         }
         return s;
