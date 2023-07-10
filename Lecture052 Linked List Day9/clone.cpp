@@ -77,11 +77,20 @@ class Solution
             {
                 cloneNode -> arb  = NULL;
             }
-            
-            cloneNode = cloneNode -> next;
-            originalNode = originalNode -> next;
+
+           if(cloneNode->next != NULL) {
+               cloneNode = cloneNode -> next->next;
+           }
+           else{
+              cloneNode = cloneNode -> next;
+           }
+          if(originalNode->next != NULL){
+            originalNode = originalNode -> next->next;
+          }
+           else{
+              originalNode = originalNode->next;
+          }
         }
-        
         //step 4: revert step 2 changes
         Node* original = head;
         Node* copy = cloneHead;
