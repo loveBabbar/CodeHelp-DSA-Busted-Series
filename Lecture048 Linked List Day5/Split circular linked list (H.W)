@@ -1,0 +1,46 @@
+void print(Node* tail) {
+    Node* temp = tail;
+    do {
+        cout << tail->data << " ";
+        tail = tail->next;
+    } while (tail != temp);
+    cout << endl;
+}
+
+int length(Node* tail) {
+    Node* temp = tail;
+    int cnt = 0;
+    do {
+        tail = tail->next;
+        cnt++;
+    } while (tail != temp);
+    return cnt;
+}
+
+//Function to split the circular LL
+Node* split(Node* tail) {
+    Node* temp = tail;
+    int len = length(tail);
+    int splitPoint = len % 2 ? (len / 2) : (len / 2 - 1);
+
+    while (splitPoint--) {
+        temp = temp->next;
+    }
+
+    Node* newTail = temp->next;
+    temp->next = tail;
+    temp = newTail;
+
+    while (temp->next != tail) {
+        temp = temp->next;
+    }
+    temp->next = newTail;
+    return newTail;
+}
+
+int main() {
+    Node* tail = NULL;
+    Node* newTail = split(tail);
+    print(tail);
+    print(newTail);
+}
