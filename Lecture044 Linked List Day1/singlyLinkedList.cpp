@@ -69,13 +69,13 @@ void insertAtPosition(Node* &tail, Node* & head, int position, int d) {
     Node* temp  = head;
     int cnt = 1;
 
-    while(cnt < position-1) {
+    while(cnt < position-1 && temp != NULL) {
         temp = temp->next;
         cnt++;
     }
 
     //inserting at Last Position
-    if(temp -> next == NULL) {
+    if(temp == NULL) {
         insertAtTail(tail,d);
         return ;
     }
