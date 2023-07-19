@@ -3,7 +3,7 @@ bool isPossible(vector<int> &stalls, int k, int mid, int n) {
     int cowCount = 1;
     int lastPos = stalls[0];
     
-    for(int i=0; i<n; i++ ){
+    for(int i=1; i<n; i++ ){
         
         if(stalls[i]-lastPos >= mid){
             cowCount++;
