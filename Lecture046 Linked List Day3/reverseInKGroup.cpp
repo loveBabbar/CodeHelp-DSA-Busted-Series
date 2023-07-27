@@ -17,6 +17,16 @@
 
 
 Node* kReverse(Node* head, int k) {
+    //when number of nodes is not a multiple of k, the left over ones are not to be reversed.
+    int size = 0;
+    Node* temp = head;
+
+    while(temp!=NULL){
+        temp = temp -> next;
+        size++;
+    }
+    if(size < k)return head;   
+    
     //base call
     if(head == NULL) {
         return NULL;
