@@ -41,9 +41,17 @@ void solve(Node<int>* first, Node<int>* second) {
             curr1 = curr2;
             curr2 = next2;
         }
-        else {
-            
-        }
+        else{
+
+                curr1 = curr1->next;
+                next1 = next1->next;
+
+                if(next1 == NULL){
+                    curr1->next = curr2;
+                    return l1;
+                }
+            }
+
         
         
     }
