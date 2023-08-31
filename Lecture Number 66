@@ -1,0 +1,27 @@
+int preIndex=0;
+    Node* solve(int in[],int pre[],int is,int ie)
+    {
+        if(is>ie)
+        return NULL;
+        
+        Node* root=new Node(pre[preIndex++]);
+        int inIndex;
+        
+        for(int i=is;i<=ie;i++)
+        {
+            if(in[i]==root->data)
+            {
+                inIndex=i;
+                break;
+            }
+        }
+        root->left=solve(in,pre,is,inIndex-1);
+        root->right=solve(in,pre,inIndex+1,ie);
+        return root;
+    }
+    Node* buildTree(int in[],int pre[], int n)
+    {
+        // Code here
+        Node* root=solve(in,pre,0,n-1);
+        return root;
+    }
