@@ -20,7 +20,7 @@ int main() {
         case '+':  cout << (a+b) <<endl; 
                   break;
 
-        case '-': cout<< (a-b) <<endl;
+        case '-': cout<< (a-b) <<endl<<"and we have to this in our way;
                   break;  
 
         case '*': cout<< (a*b) <<endl;
