@@ -1,0 +1,24 @@
+// Remove duplicates from an unsorted linked list using set
+
+ Node *removeDuplicates(Node *head)
+{
+    /* Hash to store visited values */
+    unordered_set<int> hash;
+    /* Pick elements one by one */
+    struct Node* current = head;
+    struct Node* prev = NULL;
+    while (current != NULL) {
+    	// If the current value is already visited
+        if (hash.find(current->data) != hash.end()) {
+            prev->next = current->next;
+            delete (current);
+        }
+        // If the value is not present in hash
+        else {
+            hash.insert(current->data);
+            prev = current;
+        }
+        current = prev->next;
+    }
+    return head;
+}
