@@ -27,16 +27,6 @@ int main() {
 
     cout << "answer is "<< ans << endl;
 
-//case 1
-    while(true) {
-        int i = 5;
-    }
-    
-//case 2
-    while(true) {
-        int* ptr = new int;
-    }
-
 
 
 
