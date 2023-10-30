@@ -6,7 +6,7 @@ public:
   
     int find_pivot(vector<int> v) {
 	int s = 0, e = v.size() - 1;
-	int mid=(s + e) / 2;
+	int mid = s + (e - s) / 2;
 	while (s < e)
 	{
 		if(v[mid] < v[mid+1])
@@ -14,7 +14,7 @@ public:
     		else
       			e = mid;
     
-		mid = (s + e) / 2;
+		mid = s + (e - s) / 2;
 	}
 	return s;
     }
