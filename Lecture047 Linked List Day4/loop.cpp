@@ -22,7 +22,7 @@ Node* floydDetectLoop(Node* head) {
     Node* slow = head;
     Node* fast = head;
 
-    while(slow != NULL && fast !=NULL) {
+    while(fast !=NULL) {
         
         fast = fast -> next;
         if(fast != NULL) {
