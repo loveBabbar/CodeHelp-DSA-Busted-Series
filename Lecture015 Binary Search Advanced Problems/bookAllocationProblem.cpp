@@ -34,6 +34,9 @@ int allocateBooks(vector<int> arr, int n, int m) {
         sum += arr[i];
     }
     int e = sum;
+    //there is small change in condition in which we have to return -1 when number of book is less then number of students then that will be not possible to allocate book to every student
+    if(n<m){
+        return -1;}
     int ans = -1;
     int mid = s + (e-s)/2;
     
