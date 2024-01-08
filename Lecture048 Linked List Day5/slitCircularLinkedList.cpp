@@ -47,12 +47,12 @@ pair<Node*, Node*> splitCircularList(Node* head) {
     while (temp->next != head) {
         temp = temp->next;
     }
-    temp->next = nullptr;
+    temp->next = newhead;
     Node* temp2 = head;
     while (temp2->next != newhead) {
         temp2 = temp2->next;
     }
-    temp2->next = nullptr;
+    temp2->next = head;
 
     ans.first = head;
     ans.second = newhead;
