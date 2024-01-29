@@ -18,7 +18,7 @@ int getPivot(vector<int>& arr, int n) {
         }
         mid = s + (e-s)/2;
     }
-    return s;
+    return e;
 }
 
 int binarySearch(vector<int>& arr, int s, int e, int key) {
