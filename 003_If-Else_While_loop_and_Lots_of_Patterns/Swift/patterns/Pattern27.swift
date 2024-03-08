@@ -1,0 +1,32 @@
+
+import Foundation
+
+// Function to print the specified pattern
+func printPattern(_ n: Int) {
+    var number = 1
+    var secondHalf = (number * number) + 1
+    for row in 1...n {
+        for _ in 1...(row - 1) {
+            print("  ", terminator: "")
+        }
+
+        for _ in 1...(n - row + 1) {
+            print("\(number) ", terminator: "")
+            number += 1
+        }
+
+        for _ in 1...(n - row + 1) {
+            print("\(secondHalf) ", terminator: "")
+            secondHalf += 1
+        }
+        print("")
+    }
+}
+
+// Taking user input for the number of rows
+print("Enter Number of ROWS for the Pattern: ", terminator: "")
+if let input = readLine(), let n = Int(input) {
+    printPattern(n)
+} else {
+    print("Invalid input")
+}
