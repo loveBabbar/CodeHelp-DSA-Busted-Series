@@ -9,8 +9,6 @@ void print(int arr[], int s, int e) {
 }
 
 bool binarySearch(int *arr, int s, int e , int k ) {
-    cout << endl;
-    print(arr,s,e);
 
     //base case
 
@@ -19,7 +17,7 @@ bool binarySearch(int *arr, int s, int e , int k ) {
         return false;
 
     int mid = s + (e-s)/2;
-    cout << "value of arr mid is " << arr[mid] << endl;
+
     //element found
     if(arr[mid] == k)
         return true;
