@@ -1,0 +1,58 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+
+class Node{
+public:
+  int data;
+  Node* left;
+  Node* right;
+
+  Node(int d){
+    this -> data = d;
+    this -> left = NULL;
+    this -> righ = NULL;
+  }
+};
+
+//Search in binary search tree
+Node* searchBST(Node* root, int val){
+  if(root == NULL){
+      return NULL;
+  }
+  if(root->val == val){
+      return root;
+  }else if (root->val < val){
+      return searchBST(root->right, val);
+  }
+  else{
+      return searchBST(root->left, val);
+  }
+}
+
+bool searchInBST(Node* root, int val){
+  Node* temp = root;
+  while(temp!=NULL){
+    if(temp->data == val)
+      return true;
+    if(temp->data > val)
+      temp = temp->left;
+    else
+      temp = temp->right;
+  return false;
+}
+
+Node* insertInBST(Node* &root, int val){
+  if(root == NULL){
+    root = new Node(val);
+    return root;
+  }
+  if(root->data < val)
+    root->right = insertInBST(root->right, val);
+  else
+    root->left = insertInBST(root->left, val);
+  
+  return root;
+}
+
+
