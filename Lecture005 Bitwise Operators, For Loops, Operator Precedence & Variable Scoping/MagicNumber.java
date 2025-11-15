@@ -7,7 +7,7 @@ public class MagicNumber {
         while(n > 0){
             // Find Last Digit of Binary number by and with 1
             int lastDigit = n & 1;
-            ans = lastDigit * base;
+            ans = ans + lastDigit * base; // fixed an error to add the answer
             base  = base * 5;
             n = n >> 1;
         }
