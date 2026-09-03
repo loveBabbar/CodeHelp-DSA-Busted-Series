@@ -1,0 +1,55 @@
+void deleteduplicate(Node* head) {
+    Node * temp=head;
+    while (temp!=NULL) {
+        Node* temp2=temp;
+        while (temp2!=NULL) {
+            if ((temp2->next!=NULL) &&temp2->next->data==temp->data) {
+                Node* nodetodel=temp2->next;
+                if (temp2->next->next!=NULL) {
+                    temp2->next=temp2->next->next;
+
+                }
+                else {
+                    temp2->next=NULL;
+
+                }
+                
+                
+                delete nodetodel;
+
+            }
+            else {
+                temp2=temp2->next;
+            }
+            
+
+        }
+        temp=temp->next;
+    }
+}
+void deleteduplicateusingmap(Node* head) {
+    map<int,bool> visited;
+    Node*curr=head;
+    Node* prev=NULL;
+    while(curr!=NULL) {
+        if(visited[curr->data]==true) {
+            prev->next=curr->next;
+            Node* pointerforcurr=curr->next;
+            delete curr;
+            
+            
+            curr=pointerforcurr;
+            
+
+        }
+        else {
+            visited[curr->data]=true;
+            prev=curr;
+            curr=curr->next;
+            
+        }
+        
+        
+
+    }
+}
